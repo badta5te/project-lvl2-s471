@@ -1,7 +1,6 @@
 <?php
 
 namespace Gendiff\Cli;
-
 use Docopt;
 
 const FAQ = <<<EOL
