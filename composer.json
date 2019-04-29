@@ -1,0 +1,30 @@
+{
+    "name": "badta5te/gendiff",
+    "description": "Utility to find differences between 2 files",
+    "type": "project",
+    "keywords": [
+        "cli-utility",
+        "train project",
+        "diff files"
+    ],
+    "bin": [
+        "bin/gendiff"
+    ],
+    "autoload": {
+        "files": [
+            "src/Cli.php"
+        ]
+    },
+    "require": {
+        "docopt/docopt": "^1.0"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.4"
+    },
+    "authors": [
+        {
+            "name": "Pavel",
+            "email": "mikhailov.sztu@gmail.com"
+        }
+    ]
+}
