@@ -26,5 +26,8 @@
             "name": "Pavel",
             "email": "mikhailov.sztu@gmail.com"
         }
-    ]
+    ],
+    "scripts":{
+        "phpcs": "phpcs"
+    }
 }
