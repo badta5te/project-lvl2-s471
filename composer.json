@@ -27,7 +27,7 @@
             "email": "mikhailov.sztu@gmail.com"
         }
     ],
-    "scripts":{
+    "scripts": {
         "phpcs": "phpcs"
     }
 }

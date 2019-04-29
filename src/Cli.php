@@ -4,17 +4,17 @@ namespace Gendiff\Cli;
 
 use Docopt;
 
-$doc = <<<DOC
-Generate dif
+const FAQ = <<<EOL
+Generate diff
 Usage:
-  gendiff (-h|--help)
-  gendiff [--format <fmt>] <firstFile> <secondFile
+  gendiff (-h| --help)
+  gendiff [--format <fmt>] <firstFile> <secondFile>
 Options:
   -h --help                     Show this screen
-  --format <fmt>                Report format [default: pretty
-DOC;
+  --format <fmt>                Report format [default: pretty]
+EOL;
 
 function run()
 {
-    Docopt::handle($doc);
+    Docopt::handle(FAQ);
 }
