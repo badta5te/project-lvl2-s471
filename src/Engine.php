@@ -44,5 +44,6 @@ function getDiff($pathFirst, $pathSecond)
     }, []);
 
     $result = implode(PHP_EOL, $array);
+    
     return '{' . PHP_EOL . $result . PHP_EOL . '}';
 }
