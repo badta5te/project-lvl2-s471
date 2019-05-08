@@ -13,8 +13,8 @@
     "autoload": {
         "files": [
             "src/Cli.php",
-            "src/Engine.php",
-            "src/Parser.php"
+            "src/Parser.php",
+            "src/Engine.php"
         ],
         "classmap": [
             "src/"

@@ -1,7 +1,6 @@
 <?php
 
 namespace Gendiff\Parser;
-
 use Symfony\Component\Yaml\Yaml;
 
 function getExtension($path)
