@@ -13,7 +13,8 @@
     "autoload": {
         "files": [
             "src/Cli.php",
-            "src/Engine.php"
+            "src/Engine.php",
+            "src/Parser.php"
         ],
         "classmap": [
             "src/"
@@ -21,7 +22,8 @@
     },
     "require": {
         "docopt/docopt": "^1.0",
-        "funct/funct": "^1.5"
+        "funct/funct": "^1.5",
+        "symfony/yaml": "^4.2"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.4",

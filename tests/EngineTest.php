@@ -7,10 +7,18 @@ use PHPUnit\Framework\TestCase;
 
 class EngineTest extends TestCase
 {
-    public function testEngine()
+    public function testEngineJson()
     {
         $firstFilePath = __DIR__ . '/before.json';
         $secondFilePath = __DIR__ . '/after.json';
+        $expected = file_get_contents(__DIR__ . '/expected');
+        $this->assertEquals($expected, getDiff($firstFilePath, $secondFilePath));
+    }
+
+    public function testEngineYaml()
+    {
+        $firstFilePath = __DIR__ . '/before.yaml';
+        $secondFilePath = __DIR__ . '/after.yaml';
         $expected = file_get_contents(__DIR__ . '/expected');
         $this->assertEquals($expected, getDiff($firstFilePath, $secondFilePath));
     }

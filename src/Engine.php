@@ -1,17 +1,8 @@
 <?php
 
 namespace Gendiff\Engine;
+use function Gendiff\Parser\getData;
 use function Funct\Collection\union;
-
-function getDataFromFile($file)
-{
-    return file_get_contents($file);
-}
-
-function getJson($data)
-{
-    return json_decode($data, true);
-}
 
 function getStringFromBool($data)
 {
@@ -22,8 +13,8 @@ function getStringFromBool($data)
 
 function getDiff($pathFirst, $pathSecond)
 {
-    $dataBefore = getStringFromBool(getJson(getDataFromFile($pathFirst)));
-    $dataAfter = getStringFromBool(getJson(getDataFromFile($pathSecond)));
+    $dataBefore = getStringFromBool(getData($pathFirst));
+    $dataAfter = getStringFromBool(getData($pathSecond));
 
     $unionData = array_keys(union($dataBefore, $dataAfter));
 
@@ -44,6 +35,5 @@ function getDiff($pathFirst, $pathSecond)
     }, []);
 
     $result = implode(PHP_EOL, $array);
-    
     return '{' . PHP_EOL . $result . PHP_EOL . '}';
 }
