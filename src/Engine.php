@@ -1,6 +1,7 @@
 <?php
 
 namespace Gendiff\Engine;
+
 use function Gendiff\Parser\getData;
 use function Funct\Collection\union;
 
