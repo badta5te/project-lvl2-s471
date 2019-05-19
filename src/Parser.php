@@ -9,7 +9,6 @@ function getExtension($path)
     return $extension['extension'];
 }
 
-
 function getData($path)
 {
     $extension = getExtension($path);

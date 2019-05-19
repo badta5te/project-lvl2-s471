@@ -14,7 +14,8 @@
         "files": [
             "src/Cli.php",
             "src/Parser.php",
-            "src/Engine.php"
+            "src/Engine.php",
+            "src/AST.php"
         ],
         "classmap": [
             "src/"
