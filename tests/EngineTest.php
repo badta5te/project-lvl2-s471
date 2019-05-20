@@ -51,4 +51,17 @@ class EngineTest extends TestCase
         $expected = file_get_contents(__DIR__ . '/files/expectedPlain');
         $this->assertEquals($expected, getDiff($firstFilePath, $secondFilePath, 'plain'));
     }
+
+    public function testJson()
+    {
+        $firstFilePath = __DIR__ . '/files/before2.json';
+        $secondFilePath = __DIR__ . '/files/after2.json';
+        $expected = file_get_contents(__DIR__ . '/files/expectedJson');
+        $this->assertEquals($expected, getDiff($firstFilePath, $secondFilePath, 'json'));
+
+        $firstFilePath = __DIR__ . '/files/before2.yaml';
+        $secondFilePath = __DIR__ . '/files/after2.yaml';
+        $expected = file_get_contents(__DIR__ . '/files/expectedJson');
+        $this->assertEquals($expected, getDiff($firstFilePath, $secondFilePath, 'json'));
+    }
 }

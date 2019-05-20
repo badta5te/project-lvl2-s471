@@ -17,7 +17,8 @@
             "src/Engine.php",
             "src/AST.php",
             "src/DefaultRender.php",
-            "src/PlainRender.php"
+            "src/PlainRender.php",
+            "src/JsonRender.php"
         ],
         "classmap": [
             "src/"

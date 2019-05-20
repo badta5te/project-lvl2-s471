@@ -6,6 +6,7 @@ use function Gendiff\AST\getAST;
 use function Gendiff\AST\parseAST;
 use function Gendiff\DefaultRender\getDefaultData;
 use function Gendiff\PlainRender\getPlainData;
+use function Gendiff\JsonRender\getJsonData;
 
 function getDiff($pathFirst, $pathSecond, $format = 'pretty')
 {
@@ -16,6 +17,9 @@ function getDiff($pathFirst, $pathSecond, $format = 'pretty')
 
     if ($format === 'plain') {
         return getPlainData($ast);
+    } elseif ($format === 'json') {
+        return getJsonData($ast);
     }
+
     return getDefaultData($ast);
 }
