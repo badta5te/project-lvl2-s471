@@ -15,7 +15,9 @@
             "src/Cli.php",
             "src/Parser.php",
             "src/Engine.php",
-            "src/AST.php"
+            "src/AST.php",
+            "src/DefaultRender.php",
+            "src/PlainRender.php"
         ],
         "classmap": [
             "src/"

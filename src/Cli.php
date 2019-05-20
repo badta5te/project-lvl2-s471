@@ -19,5 +19,7 @@ function run()
     $data = Docopt::handle(FAQ);
     $pathFirst = $data->args['<firstFile>'];
     $pathSecond = $data->args['<secondFile>'];
-    echo getDiff($pathFirst, $pathSecond);
+    $format = $data->args['--format'];
+
+    echo getDiff($pathFirst, $pathSecond, $format);
 }
