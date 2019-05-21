@@ -20,3 +20,6 @@
 
 ### Step 5:
 [![asciicast](https://asciinema.org/a/lcLj6li5EvC1VLJE9VufcoZkC.svg)](https://asciinema.org/a/lcLj6li5EvC1VLJE9VufcoZkC)
+
+### Step 6:
+[![asciicast](https://asciinema.org/a/1o9cZkfJPifoIj4tz07C2m9X9.svg)](https://asciinema.org/a/1o9cZkfJPifoIj4tz07C2m9X9)
