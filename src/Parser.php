@@ -3,21 +3,14 @@
 namespace Gendiff\Parser;
 use Symfony\Component\Yaml\Yaml;
 
-function getExtension($path)
+function parse($data, $extension)
 {
-    $extension = pathinfo($path);
-    return $extension['extension'];
-}
-
-function getData($path)
-{
-    $extension = getExtension($path);
     switch ($extension) {
         case 'json':
-            return json_decode(file_get_contents($path), true);
+            return json_decode($data, true);
             break;
         case 'yaml':
-            return Yaml::parse(file_get_contents($path));
+            return Yaml::parse($data);
             break;
     }
 }

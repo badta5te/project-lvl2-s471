@@ -1,8 +1,8 @@
 <?php
 
-namespace Gendiff\DefaultRender;
+namespace Gendiff\PrettyRender;
 
-function getDefaultData($ast, $level = 0)
+function getPrettyData($ast, $level = 0)
 {
     $separator = str_repeat('    ', $level);
     $parsedAST = array_reduce($ast, function ($acc, $node) use ($separator, $level) {
@@ -16,7 +16,7 @@ function getDefaultData($ast, $level = 0)
 
         switch ($type) {
             case 'node':
-                $acc[] = $separator . "    {$key}: " . getDefaultData($children, $level + 1);
+                $acc[] = $separator . "    {$key}: " . getPrettyData($children, $level + 1);
                 break;
             case 'changed':
                 $before = $separator . "  - {$key}: " . toString($valueBefore, $level);
@@ -41,15 +41,16 @@ function getDefaultData($ast, $level = 0)
 
 function toString($value, $level)
 {
-    if (is_array($value)) {
-        $separator = str_repeat('    ', $level + 1);
-        $keys = array_keys($value);
-        $data =  array_map(function ($key) use ($value, $separator, $level) {
-            return "    {$key}: {$value[$key]}";
-        }, $keys);
-        $string = implode(PHP_EOL, $data);
-        $result = '{' . PHP_EOL . "{$separator}" . $string . PHP_EOL . "{$separator}" . '}';
-        return $result;
+    if (!is_array($value)) {
+        return $value;
     }
-    return $value;
+
+    $separator = str_repeat('    ', $level + 1);
+    $keys = array_keys($value);
+    $data =  array_map(function ($key) use ($value, $separator, $level) {
+        return "    {$key}: {$value[$key]}";
+    }, $keys);
+    $string = implode(PHP_EOL, $data);
+    $result = '{' . PHP_EOL . "{$separator}" . $string . PHP_EOL . "{$separator}" . '}';
+    return $result;
 }

@@ -16,7 +16,7 @@
             "src/Parser.php",
             "src/Engine.php",
             "src/AST.php",
-            "src/DefaultRender.php",
+            "src/PrettyRender.php",
             "src/PlainRender.php",
             "src/JsonRender.php"
         ],

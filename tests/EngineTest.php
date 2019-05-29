@@ -7,61 +7,55 @@ use PHPUnit\Framework\TestCase;
 
 class EngineTest extends TestCase
 {
-    public function testEngineJson()
+    public function testStraight()
     {
-        $firstFilePath = __DIR__ . '/files/before.json';
-        $secondFilePath = __DIR__ . '/files/after.json';
-        $expected = file_get_contents(__DIR__ . '/files/expected');
+        $firstFilePath = 'tests/files/before.json';
+        $secondFilePath = 'tests/files/after.json';
+        $expected = file_get_contents('tests/files/expected');
+        $this->assertEquals($expected, getDiff($firstFilePath, $secondFilePath));
+
+        $firstFilePath = 'tests/files/before.yaml';
+        $secondFilePath = 'tests/files/after.yaml';
+        $expected = file_get_contents('tests/files/expected');
         $this->assertEquals($expected, getDiff($firstFilePath, $secondFilePath));
     }
 
-    public function testEngineYaml()
+    public function testNested()
     {
-        $firstFilePath = __DIR__ . '/files/before.yaml';
-        $secondFilePath = __DIR__ . '/files/after.yaml';
-        $expected = file_get_contents(__DIR__ . '/files/expected');
+        $firstFilePath = 'tests/files/before2.json';
+        $secondFilePath = 'tests/files/after2.json';
+        $expected = file_get_contents('tests/files/expected2');
         $this->assertEquals($expected, getDiff($firstFilePath, $secondFilePath));
-    }
 
-    public function testNestedJson()
-    {
-        $firstFilePath = __DIR__ . '/files/before2.json';
-        $secondFilePath = __DIR__ . '/files/after2.json';
-        $expected = file_get_contents(__DIR__ . '/files/expected2');
-        $this->assertEquals($expected, getDiff($firstFilePath, $secondFilePath));
-    }
-
-    public function testNestedYaml()
-    {
-        $firstFilePath = __DIR__ . '/files/before2.yaml';
-        $secondFilePath = __DIR__ . '/files/after2.yaml';
-        $expected = file_get_contents(__DIR__ . '/files/expected2');
+        $firstFilePath = 'tests/files/before2.yaml';
+        $secondFilePath = 'tests/files/after2.yaml';
+        $expected = file_get_contents('tests/files/expected2');
         $this->assertEquals($expected, getDiff($firstFilePath, $secondFilePath));
     }
 
     public function testPlain()
     {
-        $firstFilePath = __DIR__ . '/files/before2.json';
-        $secondFilePath = __DIR__ . '/files/after2.json';
-        $expected = file_get_contents(__DIR__ . '/files/expectedPlain');
+        $firstFilePath = 'tests/files/before2.json';
+        $secondFilePath = 'tests/files/after2.json';
+        $expected = file_get_contents('tests/files/expectedPlain');
         $this->assertEquals($expected, getDiff($firstFilePath, $secondFilePath, 'plain'));
 
-        $firstFilePath = __DIR__ . '/files/before2.yaml';
-        $secondFilePath = __DIR__ . '/files/after2.yaml';
-        $expected = file_get_contents(__DIR__ . '/files/expectedPlain');
+        $firstFilePath = 'tests/files/before2.yaml';
+        $secondFilePath = 'tests/files/after2.yaml';
+        $expected = file_get_contents('tests/files/expectedPlain');
         $this->assertEquals($expected, getDiff($firstFilePath, $secondFilePath, 'plain'));
     }
 
     public function testJson()
     {
-        $firstFilePath = __DIR__ . '/files/before2.json';
-        $secondFilePath = __DIR__ . '/files/after2.json';
-        $expected = file_get_contents(__DIR__ . '/files/expectedJson');
+        $firstFilePath = 'tests/files/before2.json';
+        $secondFilePath = 'tests/files/after2.json';
+        $expected = file_get_contents('tests/files/expectedJson');
         $this->assertEquals($expected, getDiff($firstFilePath, $secondFilePath, 'json'));
 
-        $firstFilePath = __DIR__ . '/files/before2.yaml';
-        $secondFilePath = __DIR__ . '/files/after2.yaml';
-        $expected = file_get_contents(__DIR__ . '/files/expectedJson');
+        $firstFilePath = 'tests/files/before2.yaml';
+        $secondFilePath = 'tests/files/after2.yaml';
+        $expected = file_get_contents('tests/files/expectedJson');
         $this->assertEquals($expected, getDiff($firstFilePath, $secondFilePath, 'json'));
     }
 }
