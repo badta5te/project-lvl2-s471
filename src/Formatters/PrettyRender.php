@@ -1,6 +1,6 @@
 <?php
 
-namespace Gendiff\PrettyRender;
+namespace Gendiff\Formatters\PrettyRender;
 
 function getPrettyData($ast, $level = 0)
 {

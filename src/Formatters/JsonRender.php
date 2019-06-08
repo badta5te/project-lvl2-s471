@@ -1,6 +1,6 @@
 <?php
 
-namespace Gendiff\JsonRender;
+namespace Gendiff\Formatters\JsonRender;
 
 function getJsonData($ast)
 {

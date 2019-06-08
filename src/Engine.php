@@ -3,26 +3,26 @@
 namespace Gendiff\Engine;
 use function Gendiff\Parser\parse;
 use function Gendiff\AST\getAST;
-use function Gendiff\PrettyRender\getPrettyData;
-use function Gendiff\PlainRender\getPlainData;
-use function Gendiff\JsonRender\getJsonData;
+use function Gendiff\Formatters\PrettyRender\getPrettyData;
+use function Gendiff\Formatters\PlainRender\getPlainData;
+use function Gendiff\Formatters\JsonRender\getJsonData;
 
-function getExtension($path)
+function getDataType($path)
 {
-    $extension = pathinfo($path);
-    return $extension['extension'];
+    $dataType = pathinfo($path);
+    return $dataType['extension'];
 }
 
 function getDiff($pathFirst, $pathSecond, $format = 'pretty')
 {
-    $extensionFileBefore = getExtension($pathFirst);
-    $extensionFileAfter = getExtension($pathSecond);
+    $dataTypeFileBefore = getDataType($pathFirst);
+    $dataTypeFileAfter = getDataType($pathSecond);
 
     $getContentFileBefore = file_get_contents($pathFirst);
     $getContentFileAfter = file_get_contents($pathSecond);
 
-    $getDataBefore = parse($getContentFileBefore, $extensionFileBefore);
-    $getDataAfter = parse($getContentFileAfter, $extensionFileAfter);
+    $getDataBefore = parse($getContentFileBefore, $dataTypeFileBefore);
+    $getDataAfter = parse($getContentFileAfter, $dataTypeFileAfter);
 
     $ast = getAST($getDataBefore, $getDataAfter);
 

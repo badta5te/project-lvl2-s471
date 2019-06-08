@@ -1,6 +1,6 @@
 <?php
 
-namespace Gendiff\PlainRender;
+namespace Gendiff\Formatters\PlainRender;
 
 function getPlainData($ast, $separator = '')
 {

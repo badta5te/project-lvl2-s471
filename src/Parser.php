@@ -3,9 +3,9 @@
 namespace Gendiff\Parser;
 use Symfony\Component\Yaml\Yaml;
 
-function parse($data, $extension)
+function parse($data, $dataType)
 {
-    switch ($extension) {
+    switch ($dataType) {
         case 'json':
             return json_decode($data, true);
             break;

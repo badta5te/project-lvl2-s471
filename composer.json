@@ -16,9 +16,9 @@
             "src/Parser.php",
             "src/Engine.php",
             "src/AST.php",
-            "src/PrettyRender.php",
-            "src/PlainRender.php",
-            "src/JsonRender.php"
+            "src/Formatters/PrettyRender.php",
+            "src/Formatters/PlainRender.php",
+            "src/Formatters/JsonRender.php"
         ],
         "classmap": [
             "src/"
